@@ -2,3 +2,11 @@ __pycache__
 .pytest_cache/
 .cache
 .DS_Store
+
+final
+comoving_mhd_waves.egg-info/
+setup.cfg
+pyproject.toml
+
+*.png
+*.txt

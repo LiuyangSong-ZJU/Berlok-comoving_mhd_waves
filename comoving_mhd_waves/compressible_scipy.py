@@ -4,7 +4,7 @@ import numpy as np
 class ScipyComovingMagnetosonicWave:
 
     def __init__(self, k, H0, Vs, Va, Vg, gamma, ai, A_u, A_rho,
-                 Omega0=1, OmegaLambda=0, points=10000):
+                 Omega0=1, OmegaLambda=0, points=1000000):
         from scipy.integrate import solve_ivp
 
         def rhs(a, y):
@@ -28,6 +28,7 @@ class ScipyComovingMagnetosonicWave:
 
         sol = solve_ivp(rhs, [ai, 1], f0, method='BDF',
                         dense_output=True, atol=1e-10, rtol=1e-8)
+                        # dense_output=True, atol=1e-12, rtol=1e-12, max_step=1e-5)
 
         self.k = k
         self.H0 = H0
