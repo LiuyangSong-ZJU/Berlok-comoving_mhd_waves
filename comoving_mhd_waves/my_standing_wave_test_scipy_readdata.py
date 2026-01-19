@@ -33,7 +33,7 @@ def load_gamer_data(filename):
     return a_values, delta_rho_values
 
 # 读取数据文件
-a_gamer, delta_rho_gamer = load_gamer_data('../deltarho_norm_data_lefthalf-original.txt')
+a_gamer, delta_rho_gamer = load_gamer_data('../deltarho_norm_data_lefthalf-MHM_RP-CFL0.1.txt')
 
 # ========================================
 # 解析解参数
@@ -60,7 +60,7 @@ sol = ScipyComovingMagnetosonicWave(k, H0, Vs_sim, Va_sim, Vg_sim, gamma, ai, A_
 # ========================================
 # 画图
 # ========================================
-a = np.logspace(np.log10(ai), 0, 300)
+a = np.logspace(np.log10(ai), 0, 300000)
 
 fig, axes = plt. subplots(nrows=2, ncols=2, figsize=(12, 9), sharex=True)
 
@@ -123,9 +123,9 @@ print("Parameters:")
 print(f"  γ = {gamma}")
 print(f"  ai = {ai}")
 print(f"  Vs = {Vs_sim:.6f}")
-print(f"  Va = {Va_sim:. 6f}")
-print(f"  Vg = {Vg_sim:. 6f}")
-print(f"  A_u = {A_u_sim:. 6e}")
+print(f"  Va = {Va_sim:.6f}")
+print(f"  Vg = {Vg_sim:.6f}")
+print(f"  A_u = {A_u_sim:.6e}")
 print(f"  A_rho = {A_rho_sim}")
 print("=" * 50)
 print(f"GAMER data range: a = [{a_gamer. min():.4f}, {a_gamer.max():.4f}]")

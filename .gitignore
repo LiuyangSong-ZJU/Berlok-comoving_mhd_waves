@@ -10,3 +10,5 @@ pyproject.toml
 
 *.png
 *.txt
+
+.history
